@@ -7,6 +7,13 @@ import Item from '../components/Item'
 import ItemTemp from '../components/ItemTemp'
 import Modal from '../components/modal'
 import Navbar from '../components/navbar'
+interface ProType{
+  url:string,
+  tag:string,
+  title:string,
+  id:string,
+  description:string
+}
 const projects=[
   {
     url:"https://picjumbo.com/wp-content/uploads/creative-space-hero-image-place-for-text-free-photo-1080x720.jpg",
@@ -19,31 +26,36 @@ const projects=[
     url:"https://tailwindui.com/img/maccaw-profile.jpeg",
     tag:"HTML",
     title:"html design",
-    id:"1"
+    id:"1",
+    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus illum ab, earum quidem ducimus amet odit nostrum minima, nemo dicta itaque fugiat minus rerum esse eius voluptate reiciendis quae sequi."
   },
   {
     url:"https://tailwindui.com/img/maccaw-profile.jpeg",
     tag:"HTML",
     title:"html design",
-    id:"1"
+    id:"1",
+    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus illum ab, earum quidem ducimus amet odit nostrum minima, nemo dicta itaque fugiat minus rerum esse eius voluptate reiciendis quae sequi."
   },
   {
     url:"https://tailwindui.com/img/maccaw-profile.jpeg",
     tag:"HTML",
     title:"html design",
-    id:"1"
+    id:"1",
+    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus illum ab, earum quidem ducimus amet odit nostrum minima, nemo dicta itaque fugiat minus rerum esse eius voluptate reiciendis quae sequi."
   },
   {
     url:"https://tailwindui.com/img/maccaw-profile.jpeg",
     tag:"HTML",
     title:"html design",
-    id:"1"
+    id:"1",
+    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus illum ab, earum quidem ducimus amet odit nostrum minima, nemo dicta itaque fugiat minus rerum esse eius voluptate reiciendis quae sequi."
   },
   {
     url:"https://tailwindui.com/img/maccaw-profile.jpeg",
     tag:"HTML",
     title:"html design",
-    id:"1"
+    id:"1",
+    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus illum ab, earum quidem ducimus amet odit nostrum minima, nemo dicta itaque fugiat minus rerum esse eius voluptate reiciendis quae sequi."
   },
 ]
 const blogs=[
@@ -52,8 +64,8 @@ const blogs=[
     category:"Ruby on Rails",
     title:"One to one relationship in ruby on rails",
     substring:"",
-    minutes:1, 
-    comments:0,
+    minutes:"1", 
+    comments:"0",
     imageurl:"https://miro.medium.com/max/1400/1*dv29NiSoAJeGkbHJeEkNPQ.jpeg",
     blogurl:"https://medium.com/@crustalmaa/one-to-one-relationship-in-ruby-on-rails-322adf81ca5e"
   },
@@ -62,36 +74,51 @@ const blogs=[
     category:"SPRING",
     title:"title fs df sfs fds f f dsfds ss",
     substring:"subtring  fjksdl flkj flkj sdfsfsd",
-    minutes:5, 
-    comments:2
+    minutes:"5", 
+    comments:"2",
+    imageurl:"https://miro.medium.com/max/1400/1*dv29NiSoAJeGkbHJeEkNPQ.jpeg",
+    blogurl:"https://medium.com/@crustalmaa/one-to-one-relationship-in-ruby-on-rails-322adf81ca5e"
+  
   },{
     createdDate:"19 AUG", 
     category:"SPRING",
     title:"title fs df sfs fds f f dsfds ss",
     substring:"subtring  fjksdl flkj flkj sdfsfsd",
-    minutes:5, 
-    comments:2
+    minutes:"5", 
+    comments:"2",
+    imageurl:"https://miro.medium.com/max/1400/1*dv29NiSoAJeGkbHJeEkNPQ.jpeg",
+    blogurl:"https://medium.com/@crustalmaa/one-to-one-relationship-in-ruby-on-rails-322adf81ca5e"
+  
   },{
     createdDate:"19 AUG", 
     category:"SPRING",
     title:"title fs df sfs fds f f dsfds ss",
     substring:"subtring  fjksdl flkj flkj sdfsfsd",
-    minutes:5, 
-    comments:2
+    minutes:"5", 
+    comments:"2",
+    imageurl:"https://miro.medium.com/max/1400/1*dv29NiSoAJeGkbHJeEkNPQ.jpeg",
+    blogurl:"https://medium.com/@crustalmaa/one-to-one-relationship-in-ruby-on-rails-322adf81ca5e"
+  
   },{
     createdDate:"19 AUG", 
     category:"SPRING",
     title:"title fs df sfs fds f f dsfds ss",
     substring:"subtring  fjksdl flkj flkj sdfsfsd",
-    minutes:5, 
-    comments:2
+    minutes:"5", 
+    comments:"2",
+    imageurl:"https://miro.medium.com/max/1400/1*dv29NiSoAJeGkbHJeEkNPQ.jpeg",
+    blogurl:"https://medium.com/@crustalmaa/one-to-one-relationship-in-ruby-on-rails-322adf81ca5e"
+  
   },{
     createdDate:"19 AUG", 
     category:"SPRING",
     title:"title fs df sfs fds f f dsfds ss",
     substring:"subtring  fjksdl flkj flkj sdfsfsd",
-    minutes:5, 
-    comments:2
+    minutes:"5", 
+    comments:"2",
+    imageurl:"https://miro.medium.com/max/1400/1*dv29NiSoAJeGkbHJeEkNPQ.jpeg",
+    blogurl:"https://medium.com/@crustalmaa/one-to-one-relationship-in-ruby-on-rails-322adf81ca5e"
+  
   },
 ]
 
@@ -100,7 +127,8 @@ const Home: NextPage = () => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [submitting, setSubmitting] = useState(false);
-  const [project, setProject]=useState(null)
+  const [project, setProject]=useState<ProType>();
+  const [showProject, setShowProject]=useState(false);
   const handleSubmit=(e:any)=>{
       e.preventDefault();
       const data = {
@@ -130,7 +158,10 @@ const Home: NextPage = () => {
   const aboutme =  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam voluptate nostrum praesentium facilis, officiis cumque obcaecati atque amet? Asperiores eveniet minus enim aspernatur animi. Soluta harum facilis perferendis expedita voluptates!"
   return (
     <div className="flex min-h-screen flex-col items-center justify-center relative">
-       {project!==null&&<Modal project={project} onClose={()=>{setProject(null)}}/>}
+       {showProject==true&&<Modal project={project} onClose={()=>{
+        setShowProject(false);
+        
+        }}/>}
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
@@ -235,10 +266,14 @@ const Home: NextPage = () => {
           <div className=' px-10 md:px-0 mt-[4rem]'>
                 <div className='text-3xl mb-[4rem] text-green-400 text-center'>Projects</div>
                 <div className='grid grid-cols-8  justify-between gap-4  w-full '>
-                  {projects.map((pro, pid)=>{
+                  {projects.map((pro:ProType, pid)=>{
                     return(
                       <div key={pid} className='col-span-4  md:col-span-2'>
-                        <ItemTemp   id={pro.id} title={pro.title} tag={pro.tag} url1={pro.url} onClick={()=>{setProject(pro)}}/>
+                        <ItemTemp   id={pro.id} title={pro.title} tag={pro.tag} url1={pro.url} 
+                        onClick={()=>{
+                          setShowProject(true);
+                          setProject(pro);
+                        }}/>
                       </div>
                     )
                   })}
@@ -253,7 +288,6 @@ const Home: NextPage = () => {
             <div className='text-3xl mb-[4rem] text-green-400 text-center'>Blog</div>
             <div className='grid grid-cols-6 gap-4'>
               {blogs.map((bb, bid)=>{
-                console.log("bb ", bb)
                 return(
                   <div  key={bid} className="col-span-2 ">
                     <Card title={bb.title} imageurl={bb?.imageurl} blogurl={bb.blogurl} substring={bb.substring} createdDate={bb.createdDate} minutes={bb.minutes}  category={bb.category} comments={bb.comments}/>

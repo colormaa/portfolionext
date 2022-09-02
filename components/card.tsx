@@ -1,16 +1,25 @@
 import { useRouter } from 'next/router';
 import React from 'react';
-
+interface CardType{
+    title:string,
+    substring:string,
+    createdDate:string,
+    category:string, 
+    comments:string, 
+    minutes:string,
+    blogurl:string,
+    imageurl:string
+}
 const Card=({
-    title,
+    title, 
     substring,
     createdDate,
-    category, 
-    comments, 
+    category,
+    comments,
     minutes,
     blogurl,
     imageurl
-})=>{
+}:CardType)=>{
     console.log("image url ", imageurl)
     const router = useRouter()
     const cdate = createdDate.split(" ")

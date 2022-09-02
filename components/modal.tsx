@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import ItemTemp from './ItemTemp';
-
-const Modal=({project, onClose=()=>{}})=>{
+interface ModalType{
+    project:any,
+    onClose: Function
+}
+const Modal=({project, onClose}:ModalType)=>{
     if(project==undefined)
     return<></>
     return(
