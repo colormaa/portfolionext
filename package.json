@@ -1,8 +1,7 @@
 {
   "private": true,
-  "homepage": "http://colormaa.github.io/portfolionext", 
+  "homepage": "http://colormaa.github.io/portfolionext",
   "scripts": {
-
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "dev": "next dev",
