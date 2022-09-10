@@ -29,7 +29,7 @@ const Card=({
         }} className='overflow-hidden w-full h-full bg-white-500 mb-2 group'>
             <div className='relative w-full'>
                 <div className=' group-hover:opacity-60 transition transform duration-300 '>
-                    <img className=''  src={imageurl?imageurl:"https://themeforest.img.customer.envatousercontent.com/files/359731723/preview.jpg?auto=compress%2Cformat&fit=crop&crop=top&w=590&h=300&s=ac0b6d86c2429889ff88859a5df103e1"} alt="" />
+                    <img className='h-[200px] object-contain' width={"100%"} height={"100%"}  src={imageurl?imageurl:"https://themeforest.img.customer.envatousercontent.com/files/359731723/preview.jpg?auto=compress%2Cformat&fit=crop&crop=top&w=590&h=300&s=ac0b6d86c2429889ff88859a5df103e1"} alt="" />
                 </div> 
                 <div className='absolute bottom-0  text-white text-sm px-2 py-1 left-0 z-100 bg-green-500' >
                     {category} 

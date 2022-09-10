@@ -250,7 +250,7 @@ const Home: NextPage = () => {
             <div className='grid grid-cols-6 gap-4'>
               {blogs.map((bb, bid)=>{
                 return(
-                  <div  key={bid} className="col-span-2 ">
+                  <div  key={bid} className=" col-span-6 sm:col-span-3 md:col-span-2 ">
                     <Card title={bb.title} imageurl={bb?.imageurl} blogurl={bb.blogurl} substring={bb.substring} createdDate={bb.createdDate} minutes={bb.minutes}  category={bb.category} comments={bb.comments}/>
                   </div>
                   
