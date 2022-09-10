@@ -77,7 +77,7 @@ const blogs=[
   {
     createdDate:"10 SEP",
     category: "Next Prisma GraphQL",
-    title:"",
+    title:"Creating nextjs tailwind graphql typescript project part1",
     substring:"",
     minutes:"10",
     comments:"0",
