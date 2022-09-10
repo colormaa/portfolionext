@@ -74,6 +74,16 @@ const blogs=[
     imageurl:"https://miro.medium.com/max/1400/1*dv29NiSoAJeGkbHJeEkNPQ.jpeg",
     blogurl:"https://medium.com/@crustalmaa/one-to-one-relationship-in-ruby-on-rails-322adf81ca5e"
   },
+  {
+    createdDate:"10 SEP",
+    category: "Next Prisma GraphQL",
+    title:"",
+    substring:"",
+    minutes:"10",
+    comments:"0",
+    imageurl:"https://miro.medium.com/max/1400/1*5HPdR0d3i0PfZarQpwzm3w.png",
+    blogurl:"https://medium.com/@crustalmaa/creating-nextjs-tailwind-graphql-typescript-project-part1-27bfc01b6c3e"
+  }
   
 ]
 
